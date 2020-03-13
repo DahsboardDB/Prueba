@@ -1,0 +1,54 @@
+*{
+	padding: 0;
+	margin: 0;
+	font-family: 
+}
+body{
+	background-color: #ededed 
+}
+#form-param{
+	padding: 20px;
+	background-color: #fff;
+	display: flex;
+}
+#form-param .container{
+	flex: 2;
+}
+#form-param .buttons{
+	flex: 1;
+}
+input{
+	padding: 9px;
+	margin: 6px;
+	width: 35%;
+}
+button{
+	border:none;
+	padding: 9px;
+	display: block;
+	margin: 6px;
+}
+button:first-child{
+	background-color: #48e;
+	color: #fff; 
+}
+
+
+   <%
+			           
+			         InstanciasDAO instanciasDao = new InstanciasDAO ();
+			         ArrayList<Instancias> instancias = new ArrayList<Instancias>();
+			         instancias  = instanciasDao.ConsultarListadoInstancias("");
+			          
+			          %>
+			          
+			          <div>
+			         <%
+			          for (Instancias I: instancias ) { %>
+			          
+			          <a ><p:menuitem value="<%= I.getIdsql() %>"><%= I.getInstancia ()%></p:menuitem> </a>
+			          
+			          }
+                      %>
+                     
+                     </div>
